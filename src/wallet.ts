@@ -16,10 +16,10 @@ export default class wallet {
   private wallet: IOST.IOST
   private remote: IOST.RPC
 
-  constructor (opts: Option = {
+  constructor(opts: Option = {
     gasRatio: 1,
     gasLimit: 200000,
-    delay:0,
+    delay: 0,
     expiration: 90,
     url: 'http://api.iost.io',
   }) {
@@ -38,7 +38,7 @@ export default class wallet {
     }
   }
 
-  async sendContractTx (fromAccount: string, pkey: string, contractAddress: string, method: string, params: any[]) {
+  async sendTx(fromAccount: string, pkey: string, contractAddress: string, method: string, params: any[]) {
     const account = new IOST.Account(fromAccount);
     const kp = new IOST.KeyPair(bs58.decode(pkey));
     account.addKeyPair(kp, "active");
@@ -49,7 +49,7 @@ export default class wallet {
       method,
       params,
     );
-    tx.addApprove(`iost`, 50)
+    // tx.addApprove(`iost`, 50)  // 指定fromAccount最多能花费50个IOST
     tx.addSign(kp)
     tx.addPublishSign(fromAccount, kp)
     return await this.remote.transaction.sendTx(tx)

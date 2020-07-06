@@ -14,6 +14,6 @@ export default class wallet {
         privateKey: any;
         publicKey: any;
     };
-    sendContractTx(fromAccount: string, pkey: string, contractAddress: string, method: string, params: any[]): Promise<any>;
+    sendTx(fromAccount: string, pkey: string, contractAddress: string, method: string, params: any[]): Promise<any>;
 }
 export {};
