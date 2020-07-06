@@ -19,5 +19,21 @@ describe('wallet', () => {
     // const result = await walletHelper.sendTx("laijiyong", "pkey", "auth.iost", "signUp", ["pefish","Ev7FZrj8YpXZ2RvoTVTbefMDLDUuN58z1pUuxzoa4289","Ev7FZrj8YpXZ2RvoTVTbefMDLDUuN58z1pUuxzoa4289"])
     // console.log(result)
   });
+
+  it('transfer iost（laijiyong transfer to pefish 100.56 iost）', async function () {
+    // const result = await walletHelper.sendTx(
+    //   "laijiyong", 
+    //   "pkey", 
+    //   "token.iost", 
+    //   "transfer", 
+    //   [
+    //     "iost",
+    //     "laijiyong",
+    //     "pefish",
+    //     "100.56",
+    //     "memo",
+    //   ])
+    // console.log(result)
+  });
 });
 
